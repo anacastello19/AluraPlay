@@ -1,0 +1,22 @@
+.cabecera__container{
+    /*Los elementos se alineas uno al lado del otro*/
+    display: flex;
+    /*Separamos los elementro entre si*/
+    justify-content: space-between;
+    /*Centramos los elementos en el contenedor*/
+    align-items: center;
+    /*Fijamos cuando hacemos scroll el contenerdor y sus elementos */
+    position: fixed;
+    /*Le damos la cordenadas de donde va a estar fijo, en este caso queremos que siempre este fijo arriba*/
+    top: 0;
+}
+
+.cabecera__buscar__item{
+    display: none;
+}
+
+@media (min-width: 834px){
+    .cabecera__buscar__item{
+        display: block;
+    }
+}
