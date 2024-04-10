@@ -15,8 +15,49 @@
     display: none;
 }
 
+.menu__container{
+    position: fixed;
+    /* Se ubica en la parte inferior */
+    bottom: 0%;
+    /* reducimos el contenedor */
+    height: 75px;
+    /* abarca todo el ancho del body */
+    width: 100%;
+
+
+}
+
+/* Seccion superior */
+.superior__seccion__container{
+    /* Posicionamos los elementos uno al lado del otro */
+    display: flex;
+    /* para que los elementos se posicionen en el centro del contenedor */
+    align-items: center;
+    /* Alineamiento de los textos, el texto es seguido */
+    white-space: nowrap;
+    /* Scrolll */
+    overflow: scroll;
+
+    /* Espacio entre los elementos */
+    gap: 15px;
+}
+
+.rodapie__container{
+    display: flex;
+    /* Se comenta con ctrl+/ */
+    /* flex-direction: column;
+    flex-wrap: wrap; */
+    flex-flow: column wrap;
+}
+
 @media (min-width: 834px){
+    /* Cabecera */
     .cabecera__buscar__item{
         display: block;
     }
+    /* pie de pagina */
+    .rodapie__container{
+        justify-content: space-between;
+    }
+
 }
