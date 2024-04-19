@@ -1,119 +1,191 @@
-.cabecera__container{
-    /*Los elementos se alineas uno al lado del otro*/
+/* Cabecera */
+.cabecera__container {
     display: flex;
-    /*Separamos los elementro entre si*/
     justify-content: space-between;
-    /*Centramos los elementos en el contenedor*/
     align-items: center;
-    /*Fijamos cuando hacemos scroll el contenerdor y sus elementos */
     position: fixed;
-    /*Le damos la cordenadas de donde va a estar fijo, en este caso queremos que siempre este fijo arriba*/
     top: 0;
 }
 
-.cabecera__buscar__item{
+.cabecera__buscar__item {
     display: none;
 }
 
-.menu__container{
+/* Menu */
+
+.menu__container {
     position: fixed;
-    /* Se ubica en la parte inferior */
     bottom: 0%;
-    /* reducimos el contenedor */
     height: 75px;
-    /* abarca todo el ancho del body */
     width: 100%;
-
-
 }
 
-.menu__lista{
+.menu__lista {
     display: flex;
     justify-content: space-around;
     height: 100%;
 }
-/* Trabajamos con los li de la lista */
-.menu__lista li{
-    /* Alineamos lo elementos en el centro del contenedor */
+
+.menu__lista li {
     align-self: center;
 }
-.menu__itens{
+
+.menu__itens {
     display: flex;
-    /* Colocamos los iconos y los titulos en columna */
     flex-direction: column;
-    /* le damos un espacio entre ellos */
-    gap: 15px;
+    gap: 5px;
 }
+
 
 .menu__lista:nth-child(2),
 .menu__lista:nth-child(3),
-.menu__lista:nth-child(4){
+.menu__lista:nth-child(4) {
     display: none;
 }
-.menu__lista:nth-child(){}
+
 
 /* Seccion superior */
-.superior__seccion__container{
-    /* Posicionamos los elementos uno al lado del otro */
+.superior__seccion__container {
     display: flex;
-    /* para que los elementos se posicionen en el centro del contenedor */
     align-items: center;
-    /* Alineamiento de los textos, el texto es seguido */
     white-space: nowrap;
-    /* Scrolll */
     overflow: scroll;
-
-    /* Espacio entre los elementos */
     gap: 15px;
+
 }
 
-.rodapie__container{
+/* Seccion videos */
+.videos__item{
+    height: 303px;
+    width: 280px;
+    flex-grow: 1;
+}
+.videos__container{
     display: flex;
-    /* Se comenta con ctrl+/ */
-    /* flex-direction: column;
-    flex-wrap: wrap; */
-    flex-flow: column wrap;
+    flex-wrap: wrap;
+
 }
 
-@media (min-width: 834px){
+/* DESAFIO DESCRIPCIÓN DE LOS VIDEOS */
+
+.descripcion-video {
+    margin-top: 1rem;
+    display: flex;
+    align-items: start;
+
+}
+
+.descripcion-video img {
+    margin-right: 1rem;
+    flex-shrink: 0;
+    /*  Evita que la imagen se reduzca */
+
+}
+
+.detalles__video {
+    flex-direction: column;
+    text-align: left;
+
+}
+
+.detalles__video h3 {
+    margin-bottom: 10px;
+}
+
+
+/* Rodapie */
+.rodapie__container {
+    display: flex;
+    /* flex-direction: column;
+   flex-wrap: wrap; */
+    flex-flow: column wrap;
+
+
+}
+
+
+
+@media (min-width:834px) {
+
     /* Cabecera */
-    .cabecera__buscar__item{
-        display: block;
+    .cabecera__buscar__item {
+        display: block
     }
-    /* pie de pagina */
-    .rodapie__container{
-        justify-content: space-between;
-    }
-    .menu__container{
+
+    /* Desafío Menú Lateral */
+    .menu__container {
         left: 0;
         height: auto;
         width: 74px;
         top: 80px;
     }
-    .menu__lista{
+
+    .menu__lista {
         flex-direction: column;
         justify-content: flex-start;
         padding-top: 15px;
         gap: 33px;
-
     }
+
+
+    /* Rodapie */
+    .rodapie__container {
+        justify-content: space-between;
+    }
+
 
 }
 
-@media (min-width:1440px) {
-    .menu__container{
-        width: 240px;
-        /* Colocamos scroll para visalizar todas las listas */
+
+
+@media (min-width:1300px) {
+
+    .menu__container {
+        width: 239px;
         overflow: scroll;
+
     }
+    
+    .superior__seccion__container{
+        margin-left: 150px;
+    }
+
     .menu__lista:nth-child(2),
     .menu__lista:nth-child(3),
     .menu__lista:nth-child(4) {
         display: flex;
-    
     }
-    .menu__lista{
+
+    .menu__lista {
         height: auto;
         padding: 20px 17px 20px 15px;
+        gap: 15px;
+
     }
+
+    .menu__lista:nth-child(3) {
+        flex-direction: column-reverse;
+
+    }
+
+    .menu__itens {
+        flex-direction: row;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .videojuegos {
+        order: 3;
+    }
+
+    .peliculas {
+        order: 2;
+    }
+
+    .premium {
+        order: 1;
+    }
+
+
+
 }
