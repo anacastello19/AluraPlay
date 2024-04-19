@@ -27,6 +27,31 @@
 
 }
 
+.menu__lista{
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+}
+/* Trabajamos con los li de la lista */
+.menu__lista li{
+    /* Alineamos lo elementos en el centro del contenedor */
+    align-self: center;
+}
+.menu__itens{
+    display: flex;
+    /* Colocamos los iconos y los titulos en columna */
+    flex-direction: column;
+    /* le damos un espacio entre ellos */
+    gap: 15px;
+}
+
+.menu__lista:nth-child(2),
+.menu__lista:nth-child(3),
+.menu__lista:nth-child(4){
+    display: none;
+}
+.menu__lista:nth-child(){}
+
 /* Seccion superior */
 .superior__seccion__container{
     /* Posicionamos los elementos uno al lado del otro */
@@ -59,5 +84,36 @@
     .rodapie__container{
         justify-content: space-between;
     }
+    .menu__container{
+        left: 0;
+        height: auto;
+        width: 74px;
+        top: 80px;
+    }
+    .menu__lista{
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 15px;
+        gap: 33px;
 
+    }
+
+}
+
+@media (min-width:1440px) {
+    .menu__container{
+        width: 240px;
+        /* Colocamos scroll para visalizar todas las listas */
+        overflow: scroll;
+    }
+    .menu__lista:nth-child(2),
+    .menu__lista:nth-child(3),
+    .menu__lista:nth-child(4) {
+        display: flex;
+    
+    }
+    .menu__lista{
+        height: auto;
+        padding: 20px 17px 20px 15px;
+    }
 }
