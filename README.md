@@ -1,7 +1,8 @@
 # Plataforma de videos 
 *Curso CSS: FlexBox, layouts responsivos 
 Curso de JavaScript: creando solicitudes*
-#En este ultimo curso vi:
+# En este ultimo curso vi:
+
     Instalar y entender qué es Node.js y JSON Server.
     
     Simularemos una API, que nos permitirá realizar las peticiones del tipo REST para enviar y agregar nuevos videos.
