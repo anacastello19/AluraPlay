@@ -8,7 +8,7 @@ async function listarVideos(){
 }
 
 //Funcion asincrona crear video
-async function crearVideo(titulo, descripcion, url, imagen){
+async function enviarVideo(titulo, descripcion, url, imagen){
     //llamamos constante, await se coloca para que espere el retorno del metodo
     const conexion= await fetch("http://localhost:3001/videos",{
         method:"POST",
@@ -16,7 +16,7 @@ async function crearVideo(titulo, descripcion, url, imagen){
         headers:{"Content-type":"application/json"},
         body:JSON.stringify({
             titulo:titulo,
-            descripcion:descripcion,
+            descripcion:`${descripcion} mil visualizaciones`,
             url:url,
             imagen:imagen
         })
@@ -34,7 +34,7 @@ async function crearVideo(titulo, descripcion, url, imagen){
 // Exportamos el modulo del proyecto
 export const conexionAPI={
     //Exportamos la funcion:
-    listarVideos, crearVideo
+    listarVideos, enviarVideo
 }
 
 //listarVideos();
