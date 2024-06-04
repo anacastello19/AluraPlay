@@ -1,54 +1,44 @@
-// // Funcion asincrona
-// async function listarVideos(){
-//     const conexion= await fetch("http://localhost:3001/videos");
-//     const conexionConvertida= conexion.json();
+// Funcion asincrona
+async function listarVideos(){
+    const conexion= await fetch("http://localhost:3001/videos");
+    const conexionConvertida= conexion.json();
 
-//     return conexionConvertida;
-//     // console.log(conexionConvertida);
-// }
-// // Exportamos el modulo del proyecto
-// export const conexionAPI={
-//     //Exportamos la funcion:
-//     listarVideos
-// }
-
-// listarVideos();
-
-async function listaVideos(){
-    const conexion = await fetch("http://localhost:3001/videos",{
-        method:"GET",
-        headers:{
-        "Content-type":"application/json",
-        "Permissions-Policy": "geolocation=(self `http://localhost:3001/videos`)"
-        }
-    });
-    
-    const conexionConvertida=await conexion.json();
-    //res.setHeader('Permissions-Policy', 'ch-ua-form-factor');
-    console.log(conexion);
-    console.log(conexionConvertida);
     return conexionConvertida;
+    // console.log(conexionConvertida);
 }
 
-async function crearVideo(titulo,descripcion,url,imagen){
+//Funcion asincrona crear video
+async function crearVideo(titulo, descripcion, url, imagen){
+    //llamamos constante, await se coloca para que espere el retorno del metodo
     const conexion= await fetch("http://localhost:3001/videos",{
-    method:"POST",
-    headers:{
-        "Content-type":"'application/json; charset=utf-8'"
-    },
-    body:JSON.stringify({
-        titulo:titulo,
-        descripcion:`${descripcion} mil visualizaciones`,
-        url:url,
-        imagen:imagen
-    })
-    })
+        method:"POST",
+        //Tipo JSON
+        headers:{"Content-type":"application/json"},
+        body:JSON.stringify({
+            titulo:titulo,
+            descripcion:descripcion,
+            url:url,
+            imagen:imagen
+        })
+        //En body convertimos un elemento de tipo object en un elemento de tipo string
+    
+    });
+    //Cuando nosotros no colocamos mas parametros se asume que estamos haciendo una peticion del tipo GET
+    //Pero en este caso vamos a estar haciendo una peticion del tipo POST
 
-    const conexionConvertida = await conexion.json();
+    const conexionConvertida=conexion.json();
+    return  conexionConvertida;
 
-    return conexionConvertida;
 }
 
-export const conectaAPI={
-    listaVideos,crearVideo
+// Exportamos el modulo del proyecto
+export const conexionAPI={
+    //Exportamos la funcion:
+    listarVideos, crearVideo
 }
+
+//listarVideos();
+
+
+//NOTA: LocalHost codigo para la terminal:
+// npx json-server --watch db.json --port 3001
